@@ -1,0 +1,64 @@
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+import img1 from './src/img/telas_perfis/tela-perfil-usuario.png'
+import img2 from './src/img/telas_perfis/tela-criar-perfil-de-usuario-gestor.png'
+import img3 from './src/img/telas_perfis/tela-criar-perfil-de-usuario-admin.png' 
+import img4 from './src/img/telas_perfis/tela-exclusao-de-perfil-usuario.png'
+
+  <p class="text-lg font-bold text-sky-600 dark:text-cyan-300 underline decoration-1">A função de cadastro de usuário está disponível somente para os Perfis de Gestores e Administradores.</p>
+
+  Ao acessar a tela de Perfis de Usuário será exibida uma listagem dos usuários cadastrados no sistema somente com os cargos de gestor e administrador <i>(como mostra na imagem abaixo)</i>.
+  É possível visualizar os seguintes dados: Nome de Usuário, Login, Perfil, Localidade e a ação de <b id="ancora1">Excluir</b>.
+
+  <div class="md:shrink-0 " >
+    <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+      <img src={img1.src} alt="Tela Perfis de Usuário" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2"/>
+    </div>
+  </div>
+
+  <section>
+    <p class="text-lg font-bold">COMO CRIAR UM PERFIL NO SISTEMA?</p>
+    Para realizar cadastro de novos perfis o usuário deve acionar a opção <b>"Novo"</b> localizado no lado direito superior da tela <i>(conforme indicado na imagem acima)</i>.
+    Em seguida, será direcionado para a tela de cadastro onde deverá preencher um formulário informando o Nome do Usuário, caso o usuário informado seja encontrado aparecerá
+    no campo de listagem para ser selecionado. Após selecionar o usuário, o campo de login será preenchido automaticamente, a seguir o usuário deve informar o tipo de perfil que ele deve pertencer.
+
+    <Tabs>
+    <TabItem label="TELA PARA GESTOR">
+      <div class="md:shrink-0 ">
+        <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+          <img src={img2.src} alt="Tela Cadastro de Novo Perfil de Usuário para Gestores" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2"/>
+        </div>
+      </div>
+    </TabItem>
+    <TabItem label="TELA PARA ADMINISTRADOR">
+      <div class="md:shrink-0">
+        <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+          <img src={img3.src} alt="Tela Cadastro de Novo Perfil de Usuário para Administradores" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2"/>
+        </div>
+      </div>
+    </TabItem>  
+    </Tabs>
+
+    ● Caso o usuário que esteja cadastrando um novo perfil pertença ao perfil de Gestor só poderá cadastrar novos gestores e informar em qual localidade irá atuar.
+    Para usuários com perfil de Administrador poderá cadastrar tanto perfis de gestores e administradores.
+
+  </section>
+
+  <section>
+    <p class="text-lg font-bold">EXCLUÇÃO DE PERFIL NO SISTEMA</p>
+    Para realizar a exclusão de um perfil no sistema o usuário deve acionar a opção de <b>[Excluir](#ancora1)</b> <i>(como apresentado na imagem inicial)</i>. Em seguida, 
+    o sistema exibe ao usuário a tela abaixo: 
+    
+    <div class="md:shrink-0">
+      <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+        <img src={img4.src} alt="Tela Exclusão de Perfil de Usuário" class="w-[105%] border border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2"/>
+      </div>
+    </div>
+
+    ● Ao entrar na tela é exibido os dados do usuário, para dar procedimento à exclusão é necessário clicar em <b>"Confirmar"</b>. Caso ao contrário poderá retornar para tela inicial
+    acionando a opção de <b>“Cancelar”</b>. Se a exclusão ocorrer com êxito aparecerá uma mensagem no canto superior da tela informando que os dados foram excluídos com sucesso
+
+    ● Nesta mesma tela o sistema disponibiliza ao usuário a opção para: adicionar um novo perfil de usuário (conforme indicado na imagem acima).
+    
+  </section>
+  

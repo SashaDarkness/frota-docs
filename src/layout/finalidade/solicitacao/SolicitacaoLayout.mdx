@@ -1,0 +1,121 @@
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+import img0 from './src/img/telas_solicitacoes/frota-tela-solicitacao-solicitante.png'
+import img1 from './src/img/telas_solicitacoes/frota-tela-solicitacao-administrador.png'
+import img2 from './src/img/telas_solicitacoes/tela-solicitacao-novo.png'
+import img3 from './src/img/telas_solicitacoes/solicitacao_data_e_hora.png'
+import img4 from './src/img/telas_solicitacoes/solicitacao_adic_localidades.png'
+import img5 from './src/img/telas_solicitacoes/solicitacao_adic_trajetos.png'
+
+  Na tela de Solicitações, é exibida uma listagem mostrando todas as solicitações efetuadas no sistema. Os seguintes dados são apresentados:
+  Número da Solicitação, Data da Solicitação, Data de Deslocamento, Solicitante, Passageiro, Localidade de Saída, Localidade de Chegada,
+  Status <b>(Aberto, Fechado, Em Andamento, Rejeitado e Agendado)</b> e Finalidade. Há também a opção para pesquisar por uma solicitação 
+  específica informando: o nome ou localidade ou finalidade.
+
+  ● Caso o usuário logado tenha o perfil de Solicitante o sistema disponibiliza as opções de: <b>Cadastrar, Alterar, Visualizar, Excluir e Imprimir Solicitação</b>.
+  Para os demais cargos o sistema exibe as opções anteriores e mais a seguinte: <b>Analisar Agendamento</b>. Conforme a imagem abaixo:
+ 
+  <Tabs>
+    <TabItem label="TELA PARA SOLICITANTES">
+      <div class="md:shrink-0">
+        <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+          <img src={img0.src} alt="Tela Solicitação para Solicitante" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2"/>
+        </div>
+      </div>
+    </TabItem>
+    <TabItem label="TELA PARA GESTORES / ADMINISTRADORES">
+      <div class="md:shrink-0">
+        <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+          <img src={img1.src} alt="Tela Solicitação para Gestores e Administradores" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2"/>
+        </div>
+      </div>
+    </TabItem>  
+  </Tabs>
+    
+  <section>
+    <p class="text-lg font-bold">COMO CRIAR UMA SOLICITAÇÃO NO SISTEMA?</p>
+    Para criar uma nova solicitação, o usuário deve clicar na opção <b>“Novo”</b> localizado no lado direito superior da tela <i>(conforme a imagem acima)</i>.
+    Em seguida, será direcionado para a tela exibida abaixo. Nessa tela o usuário deverá preencher os campos: Dados Gerais, Dados do Passageiro e Dados do Trajeto.
+
+    ● A qualquer momento do cadastro, o usuário poderá abortar o preenchimento da solicitação clicando no botão <b>“Cancelar”</b>.
+    
+    ● A solicitação do transporte pode ser para o próprio solicitante ou solicitar para outro servidor da sede.
+
+    <div class="md:shrink-0">
+      <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+        <img src={img2.src} alt="Tela de criar uma Solicitação" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2"/>
+      </div>
+    </div>
+  
+    <h5 class="underline underline-offset-4 decoration-sky-800"> DADOS GERAIS:</h5>
+    <p class="text-base font-semibold"> Nessa seção o usuário deve preencher os campos de Finalidade do transporte e informar a data e hora do deslocamento.</p>
+    <p class="text-lg font-semibold">1. Finalidade:</p>
+    <ul role="list" class="marker:text-sky-800 marker:dark:text-teal-300 list-disc">
+      <li>
+         <b>Transporte Público Geral:</b> Trata-se da Solicitação de Transporte feita para um servidor da sede (somente do TRT8).
+      </li>
+      <li>
+         <b>Transporte Magistrado:</b> Trata-se da Solicitação de Transporte feita para um Magistrado ou Ministro dos Tribunais Superiores, Desembargadores e Juízes
+         dos tribunais locais (somente do TRT8).
+      </li>
+      <li>
+         <b id="ancora1">Central de Execução:</b> Trata-se da Solicitação de Transporte feita para atendimento de demandas de Oficiais de Justiça. Dados necessários para solicitação:
+         Número do Processo, Natureza da Diligência, se há necessidade de Chaveiro, se há risco no local da diligência, além de solicitar acompanhamento dos agentes da
+         polícia judicial ou da polícia militar.
+      </li>
+      <li>
+         <b>Transporte Público Externo:</b> Trata-se da Solicitação de Transporte feita para um servidor externo da sede (de outro TRT - Tribunal Regional do Trabalho)
+      </li>
+      <li>
+         <b>Transporte Público Material/Ofício:</b> Trata-se da Solicitação de Transporte feita sem passageiro, em que o veículo será utilizado apenas para transportar Materiais ou Ofícios Judiciais.
+      </li>
+      <li>
+         <b>Transporte Público Urgente:</b> Trata-se da Solicitação de Transporte feita em caráter urgente, que deve ser priorizado pelo setor responsável.
+      </li>         
+    </ul>
+
+     <p class="text-lg font-semibold">2. Data e Hora do Deslocamento</p>
+     Em <b>Data do Deslocamento</b> o usuário deve informar a data através do calendário selecionando: o dia, mês e ano que precisa solicitar o transporte.
+     Em <b>Hora do Deslocamento</b> para informar a hora desejada, o usuário deve utilizar as setas navegáveis para selecionar o horário desejado .
+
+    <div class="md:shrink-0">
+      <div class="w-full h-[360px] overflow-auto touch-auto bg-transparent">
+        <img src={img3.src} alt="Inserir data e hora do deslocamento" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2"/>
+      </div>
+    </div>
+
+    <h5 class="underline underline-offset-4 decoration-sky-800"> DADOS DO PASSAGEIRO(A):</h5>
+    <p class="text-base font-semibold"> Nessa seção o usuário preencherá os campos somente se houver passageiro para ser transportado, informando os dados a seguir:</p>
+    <ul role="list" class="marker:text-sky-800 list-disc pl-5 space-y-3">
+      <li>Nome</li>
+      <li>E-mail</li>
+      <li>Telefone</li>
+    </ul>
+
+    <h5 class="underline underline-offset-4 decoration-sky-800"> DADOS DO TRAJETO:</h5>
+    <p class="text-base font-semibold"> Nessa seção o solicitante deve preencher os campos de localidade e trajeto do veículo.</p>
+    <p class="text-lg font-semibold">1. Localidade de Saída e Chegada:</p>
+    Em <b>Localidade de Saída</b> o usuário deverá informar em qual cidade o veículo está saindo e para qual cidade será deslocado em <b>Localidade de Chegada</b>.
+   
+    <div class="md:shrink-0">
+      <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+        <img src={img4.src} alt="Seleção da localidade de saída e chegada" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2"/>
+      </div>
+    </div>
+
+    Após selecionar as localidades, o usuário deve adicionar um trajeto de percuso, é possível adicionar mais de um trajeto e removê-los caso desejado. O usuário também
+    pode adicionar uma informação adicional no campo "Observação" conforme imagem abaixo:
+      
+     <div class="md:shrink-0">
+       <div class="w-full h-[510px] overflow-auto touch-auto">
+         <img src={img5.src} alt="Inserir informações sobre o Trajeto" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2 border-2 border-slate-300"/>
+       </div>
+     </div>
+     
+    ● No campo destacado na imagem <b>"Natureza da Diligência"</b> é somente para solicitação de transporte com finalidade <b>Central de Execução</b>. Caso o usuário tenha selecionado
+    essa opção deverá informar esses dados adicionais no campo de trajetória. Conforme descrito em: <b>[Central de Execução](#ancora1). </b>
+
+    ● Após todos os campos serem preenchidos o usuário deverá acionar o opção de <b>"Salvar"</b> para concluir o cadastro da Solicitação.
+
+ </section>
+      

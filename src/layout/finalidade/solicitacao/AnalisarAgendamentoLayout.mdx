@@ -1,0 +1,43 @@
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+import img1 from './src/img/telas_solicitacoes/frota-tela-solicitacao-analisar.png'
+
+import img2 from './src/img/telas_solicitacoes/tela_solicitacao_agendamento_01.png'
+import img3 from './src/img/telas_solicitacoes/tela_solicitacao_agendamento_02.png'
+
+  <p class="text-lg font-bold text-sky-600 dark:text-cyan-300 underline decoration-1">A função de Analisar Agendamento está disponível somente para os Perfis de Gestores e Administradores.</p>
+  
+  <section>
+    Após o solicitante concluir o cadastro de solicitação, ele ficará disponível para que um gestor possa verificar o chamado e realizar a Análise de Agendamento do Veículo.
+    
+    Para criar um Agendamento, o usuário deve clicar na opção <b>“Analisar Agendamento”</b> <i>(conforme indicado na imagem abaixo)</i>.
+  
+    <div class="md:shrink-0">
+      <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+        <img src={img1.src} alt="Tela Analisar Agendamento de Solicitação" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2"/>
+      </div>
+    </div>
+  
+    Em seguida, será direcionado para tela de Agendamento, onde será exibido o formulário preenchido com todas as informações feita pelo Solicitante, tais como: o tipo da finalidade do transporte, 
+    data e hora do deslocamento, o status em que se encontra a solicitação, a localidade de entrada e saída e sua trajetória
+
+    <div class="md:shrink-0">
+      <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+        <img src={img2.src} alt="Tela Agendamento - Dados de Agendamento e Gerais" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2"/>
+      </div>
+    </div>
+
+    Após concluir a análise dos dados, o Gestor deve informar um Veículo que esteja dispónivel e se necessário o mesmo pode adicionar uma informação no campo de Observação.
+
+    ● Nesta mesma tela o sistema também disponibiliza ao usuário as opções para: adicionar uma nova solicitação e de visualizar <i>(conforme indicado na imagem acima)</i>.
+   
+    <div class="md:shrink-0">
+      <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+        <img src={img3.src} alt="Tela Agendamento - Dados do Trajeto" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2"/>
+      </div>
+    </div>
+
+    Após ser feita a análise da solicitação e informar qual veículo será utilizado, o mesmo deve acionar a opção de <b>"Agendar"</b> para concluir o procedimento de agendamento.
+    Caso ao contrário se alguma informação inserida pelo solicitante estiver incorreto o mesmo poderá cancelar o agendamento clicando em <b>"Rejeitar"</b>.
+
+  </section>

@@ -1,0 +1,38 @@
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+import img1 from './src/img/telas_solicitacoes/tela_solicitacao_visualizar_form.png'
+import img2 from './src/img/telas_solicitacoes/tela_solicitacao_visualizar_timeline.png'
+
+  <section>
+    <p class="text-lg font-bold">COMO VISUALIZAR UMA SOLICITAÇÃO NO SISTEMA?</p>
+    Para poder visualizar uma solicitação o usuário deve acionar a opção de <b>"Visualizar"</b>, localizado na tela inicial do sistema. 
+    Em seguida, será direcionado para a tela exibida abaixo, onde conseguirá verificar com mais detalhes os dados da solicitação cadastrada.
+    
+    A tela apresentada possui as seguintes abas: Formulário e Timeline.
+
+    <div class="bg-white dark:bg-slate-800 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">    
+      <Tabs>
+        <TabItem label="Aba do Formulário">
+          Na aba <b>Formulário</b> é apresentado os campos que foram preenchido pelo usuário, tais como: Dados Gerais, Dados do Passageiro e Dados do Trajeto.
+          <div class="md:shrink-0">
+            <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+              <img src={img1.src} alt="Tela Visualizar do Formulário" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2"/>
+            </div>
+          </div>
+        </TabItem>
+        
+        <TabItem label="Aba do Timeline">
+          Na aba <b>Timeline</b> é exibido o histórico de todas as etapas do processo de Solicitação até o momento atual, mostrando quando ocorreu a Abertura da Solicitação e o seu Agendamento
+          informando o login do usuário e a data que houve o registro.
+          <div class="md:shrink-0">
+            <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+            <img src={img2.src} alt="Tela Visualizar do Timeline" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2"/>
+          </div>
+          </div>
+        </TabItem>  
+      </Tabs>
+    </div>
+
+  ● O sistema também disponibiliza ao usuário as opções para: adicionar uma nova solicitação e voltar para tela inicial <i>(conforme indicado na imagem acima)</i>.
+
+  </section>

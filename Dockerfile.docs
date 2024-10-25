@@ -1,0 +1,22 @@
+FROM node:18-alpine3.17 AS dependencies
+WORKDIR /app
+COPY package.json package-lock.json .npmrc ./
+RUN npm install -g npm@latest
+RUN --mount=type=cache,target=/root/.npm npm install
+
+FROM dependencies AS build
+COPY . .
+RUN --mount=type=cache,target=~/app/dist npm run build
+
+FROM httpd:2.4 AS image
+# RUN --mount=type=cache,target=/var/cache/apt apt-get update && apt-get install -y gettext-base && rm -rf /usr/local/apache2/htdocs/*
+RUN apt-get update && apt-get install -y gettext-base && rm -rf /usr/local/apache2/htdocs/*
+RUN pwd
+RUN ls
+COPY .htaccess /usr/local/apache2/htdocs/
+COPY httpd.conf /usr/local/apache2/conf/httpd.conf
+RUN mkdir -p /usr/local/apache2/htdocs/docs
+COPY --from=build /app/dist/ /usr/local/apache2/htdocs/docs
+RUN chmod -R 755 /usr/local/apache2/htdocs/
+
+CMD ["/bin/sh",  "-c",  "exec httpd -D FOREGROUND"]

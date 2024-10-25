@@ -1,0 +1,35 @@
+---
+import type { MarkdownLayoutProps } from 'astro';
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import '../style/styleConfig.scss'
+const {frontmatter} = Astro.props;
+const html = await Astro.slots.render('default');
+
+type Props = MarkdownLayoutProps<{
+  // Define frontmatter props here
+  title: string;
+}>;
+---
+<Fragment set:html={html} />
+<html>
+   <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <title>
+        {frontmatter.title}
+    </title>  
+</head>
+<body color="white">
+    <div class="bg-center inset-0 ">
+      <img src="/src/img/404not-found-page.png" class="h-48 w-auto object-cover md:h-full md:max-w-72">
+   </div>
+   <p color="white">Desculpe, a página que você solicitou não pode ser encontrada. Verifique a URL ou tente utilizar a barra de pesquisa. </p>
+   <CardGrid>
+     <LinkCard title="Retorne para página Inicial" href="http://localhost:4321/docs/" />
+   </CardGrid>
+</body>
+<slot /> <!-- Markdown content is injected here -->
+</html>
+
+

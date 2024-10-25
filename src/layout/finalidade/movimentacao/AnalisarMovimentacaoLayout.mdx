@@ -1,0 +1,154 @@
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+import img0 from './src/img/telas_movimentacoes/tela-movimentacoes.png'
+import img1 from './src/img/telas_movimentacoes/tela_movimentacoes_analisar_movimentacao1.png'
+import img2 from './src/img/telas_movimentacoes/2-condutor-interno-e-externo.png'
+import img3 from './src/img/telas_movimentacoes/3-data-hora-movimentacao.png'
+import img4 from './src/img/telas_movimentacoes/4-combustivel-e-contigencia.png'
+
+import img5 from './src/img/telas_movimentacoes/tela_movimentacoes_analisar_movimentacao3.png'
+import img6 from './src/img/telas_movimentacoes/validacao_da_movimentacao_de_saida.png'
+import img7 from './src/img/telas_movimentacoes/tela-analisar-movimentacao-chegada.png'
+
+
+Na tela inicial de Movimentações, é exibida uma lista mostrando todas as movimentações efetuadas no sistema. Os seguintes dados são apresentados:
+Número da Solicitação, Localidade de Saída, Data e Hora de Saída, Localidade de Chegada, Veículo, KM na Saída, KM na Chegada, Status 
+<b>(Fechada, Em Andamento, Agendada)</b> e Finalidade.
+   
+Na mesma tela, o sistema disponibiliza opções para: <b>Visualizar, Retificar Movimentação e Analisar Movimentação</b>. Há também opção para pesquisar
+por uma movimentação específica informando: Localidade ou Status ou Finalidade. É possível remover a filtragem clicando no "<b class="text-red-600 dark:text-red-500">X</b>" de limpar filtro
+e fazer uma nova busca.
+
+<div class="md:shrink-0">
+  <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+    <img src={img0.src} alt="Tela Movimentação" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2"/>
+  </div>
+</div>
+
+<section>
+  <p class="text-lg font-bold">COMO ANALISAR UMA MOVIMENTAÇÃO?</p>
+  Após ser confirmado o <a href="http://localhost:4321/docs/funcionalidade/solicitacao/05-analizar-solicitacao/" class="font-semibold text-sky-600 hover:text-sky-400 dark:text-sky-600 dark:hover:text-sky-400">agendamento da solicitação</a>
+  pelo Gestor, será possível fazer a Análise da Movimentação. Para criar uma Movimentação, o usuário deve clicar na opção de <b>"Analisar Movimentação"</b> <i>(conforme indicado na imagem acima)</i>. 
+  
+  Em seguida, será direcionado para a tela exibida abaixo. Nessa tela o usuário deverá preencher os campos: Dados de Movimentação, Dados de Saída e Danos no Veículo de Saída.
+
+  <div class="md:shrink-0">
+    <div class="w-full h-[410px] overflow-auto touch-auto bg-transparent">
+      <img src={img1.src} alt="Tela Movimentação - Registro de Saída" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2"/>
+    </div>
+  </div>  
+  
+  ● Na tela apresentada o sistema também disponibiliza ao usuário a opção para: Visualizar a movimentação.
+  
+  <h5 class="underline underline-offset-4 decoration-sky-800"> DADOS DA MOVIMENTAÇÃO:</h5> 
+  <p class="text-base font-semibold"> Nessa seção o Gestor deve informar o <u class="underline">veículo</u> que será utilizado para transporte, se necessário o mesmo pode adicionar uma informação no campo de <u class="underline">observação</u>, 
+  também é possível visualizar o <u class="underline">número da Solicitação</u> do processo e ano.</p>
+  
+  ● Caso o veículo selecionado esteja sendo usado em uma movimentação, aparecerá uma notificação na tela e será necessário o gestor escolher um outro veículo
+  
+  <h5 class="underline underline-offset-4 decoration-sky-800"> DADOS DE SAÍDA:</h5> 
+  <p class="text-base font-semibold"> Nessa seção o usuário deve preencher os campos: Condutor(Interno ou Externo), Data e Hora da Saída, Combustível, Contigência, KM na Saída e se há Necessidade de Limpeza.</p>
+  <p class="text-lg font-semibold">1. Condutor:</p>
+  No campo de <b>Condutor</b> deve ser informado o nome do servidor que conduzirá o veículo, caso seja um <u class="underline">Servidor Externo</u>, deve ser selecionado o checkbox acima do campo <i>(conforme indicado na imagem abaixo)</i>. 
+  Em seguida será possível selecionar o nome do usuário na listagem, caso o nome do servidor externo não apareça, é necessário adicioná-lo em:
+  <a href="http://localhost:4321/docs/funcionalidade/condutor_externo/01-adicionar/" class="font-semibold text-sky-600 hover:text-sky-400 dark:text-sky-600 dark:hover:text-sky-400" target="_blank">adicionar Condutor Externo</a> 
+       
+  <div class="md:shrink-0 ">
+    <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+      <img src={img2.src} alt="Tela Dados de Saída - Condutor Interno/Externo" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-90"/>
+    </div>
+  </div>
+
+  <p class="text-lg font-semibold">2. Data e Hora de Saída:</p>
+  Em <b>Data e Hora de Saída</b> o usuário deve informar a data através do calendário selecionando: o dia, mês e ano que precisa solicitar o transporte. Logo abaixo, para informar a hora, o usuário deve utilizar as setas navegáveis para selecionar o horário desejado .
+   
+  <div class="md:shrink-0 ">
+    <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+      <img src={img3.src} alt="Tela Dados de Saída - Data e Hora de Saída" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-90"/>
+    </div>
+  </div>
+
+  <p class="text-lg font-semibold">3. Combustível na Saída:</p>
+  Em <b>Combustível na Saída</b> o usuário deve informar a situação de abastecimento que o tanque do veículo se encontra, através do medidor poderá ser marcado entre as opções: Reserva, 1/8, 1/4, 3/8, 1/2, 5/8, 3/4, 7/8 ou Cheio.
+
+  <p class="text-lg font-semibold" id="ancora1">4. Contigência:</p>
+  A opção de <b>Contingência</b> só deve ser selecionada caso o sistema tenha ficado fora dor ar durante o registro da movimentação e por algum motivo o servidor que liberou o veículo ou que recebeu o veículo 
+  não pôde cadastrar imediatamente no sistema, então teve que fazer o procedimento manualmente.
+
+  <div class="md:shrink-0 ">
+    <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+      <img src={img4.src} alt=" " class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-90"/>
+    </div>
+  </div>
+
+  <p class="text-lg font-semibold">5. KM na Saída:</p>
+  No campo de <b>KM na Saída</b> o usuário deve informar a kilometragem do veículo utilizando as setas navegáveis ao lado do campo ou digitá-las manualmente.
+  
+  <p class="text-lg font-semibold">6. Necessidade de Limpeza na Saída</p>
+  Nesse campo o usuário deve selecionar entre as opções disponiveis, se o veículo está precisando fazer uma limpeza na saída. Entre elas: <b>Não (caso não seja necessário fazer uma lavagem),
+  Interna, Extena ou Completa.</b>
+
+  <h5 class="underline underline-offset-4 decoration-sky-800" id="danos_veiculo_saida"> DANOS NO VEÍCULO NA SAÍDA:</h5> 
+  <p class="text-base font-semibold"> Nessa seção o usuário deve preencher os campos abaixo com as informações de danos no Veículo na Saída.</p> 
+                   
+  O  usuário deve selecionar na imagem a região correspondente à área que o carro sofreu dano. Conforme a área selecionada, logo abaixo será exibido os campos: <b>Área, Tipo de Dano, Observação e ação de Excluir</b>
+
+  <div class="md:shrink-0 ">
+    <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+      <img src={img5.src} alt="Tela Movimentação - Danos no Veículo na Saída" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-90"/>
+    </div>
+  </div>
+  
+  <ul role="list" class="marker:text-sky-800 list-disc pl-5 space-y-3">
+    <li><b>Área:</b> Nesse campo contém o nome da área que foi selecionado na imagem.</li>
+    <li><b>Tipo de Dano:</b> Nesse campo deve ser informado qual dano ocorreu no veículo, entre as opções: Batido, Riscado ou Quebrado.</li>
+    <li><b>Observação</b> Nesse campo deve ser informado com mais detalhes os acontecimentos que ocasionou o dano no veículo.</li>
+  </ul>
+
+  ● Caso o usuário tenha selecionado a opção de <b>[Contigência](#ancora1)</b>, deve ser informado os dados da movimentação anexando os documentos do procedimento manual.
+
+  O sistema também disponibiliza a opção de <b>"Excluir"</b> uma área, caso tenha sido selecionado errado. E abaixo há mais um campo para acrescentar informações adicionais sobre outros danos que ocorreram na saída.    
+
+  Após preencher todo o formulário, para finalizar o cadastro o usuário deve clicar em <b>"Salvar Movimentação"</b>. Em seguida, o sistema solicita a senha de login ao usuário para confirmar a operação.
+
+  <div class="md:shrink-0 ">
+    <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+      <img src={img6.src} alt="Tela Movimentação - Validar Condutor" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-90"/>
+    </div>
+  </div>
+
+  Para concluir a operação o usuário deve clicar em <b>“Validar Condutor”</b> a movimentação será processada e o sistema notificará que o registro da movimentação foi efetuada com sucesso. Caso o usuário informe a senha
+  incorreta não será possível prosseguir com a operação.
+
+  Em seguida, o sistema retornará a tela de pesquisa onde é possível observar o registro da movimentação com o status “Em Andamento”.
+
+  ● Há qualquer momento o usuário poderá abortar o cadastro da movimentação acionando a opção de <b>"Cancelar"</b>
+
+  Após concluir a movimentação de saída, o usuário deve retornar para informar o registro de chegada do veículo. Ao entrar novamente na tela de analisar movimentação aparecerá um novo formulário para informar a 
+  <u class="underline">chegada do veículo</u>, similar ao que foi preenchido anteriormente
+
+  <div class="md:shrink-0 ">
+    <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+      <img src={img7.src} alt="Tela Movimentação - Registro de Chegada" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-90"/>
+    </div>
+  </div>
+
+<div class="bg-white dark:bg-slate-800 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
+  <Tabs>
+    <TabItem label="Dados de Chegada">
+      Nessa seção o usuário deve preencher as informações nos seguintes campos: Condutor(Interno ou Externo), Data e Hora da Saída, Combustível, Contigência, KM na Saída e se há Necessidade de Limpeza.
+      
+      ● Similar ao dados de saída que foram preenchidos no formulário anterior, porém com os dados atualizados na chegada do veículo.
+
+    </TabItem>
+    <TabItem label="Danos no Veículo">
+    Nessa seção o usuário deve informar se houver algum dano no veículo, que nem prescrito em <u class="underline font-semibold">[Danos no Veículo na Saída](#danos_veiculo_saida)</u>, porém com os dados atualizados na chegada do veículo.
+    
+    ● O botão de <b>Adicionar Anexo</b> só aparecerá caso o usuário tenha selecionado a opção de <b>[Contigência](#ancora1)</b>, deve ser informado os dados da movimentação anexando os documentos do procedimento manual.
+    </TabItem>
+  </Tabs>
+</div>
+
+  Ao concluir o preenchimento do formulário registro de chegada, clique em <b>"Salvar Movimentação"</b> para concluir a operação.
+
+</section>

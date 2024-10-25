@@ -1,0 +1,30 @@
+
+---
+import type { MarkdownLayoutProps } from 'astro';
+const {frontmatter} = Astro.props;
+
+type Props = MarkdownLayoutProps<{
+  // Define frontmatter props here
+  title: string;
+}>;
+
+---
+<!-- <style is:inline set:html={styleConfig}></style> -->
+<html>
+   <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <title>
+      {frontmatter.title}
+    </title>
+   </head>
+   <body>
+    <p class="text-lg">
+      O Sistema Frota de Veículos, desenvolvido pelo Tribunal Regional do Trabalho da 8ª Região, tem como propósito otimizar a administração da frota de veículos do órgão. Ele permite o acompanhamento eficiente das solicitações de transporte feitas por servidores e magistrados, além de monitorar e controlar as movimentações dos veículos no âmbito da jurisdição da 8ª Região. Com esse sistema, busca-se garantir maior agilidade, transparência e eficiência no uso dos recursos disponíveis, aprimorando a gestão logística e operacional da frota.
+    </p>
+
+   </body>
+
+  <slot /> <!-- Markdown content is injected here -->
+   <!-- ... -->
+</html>

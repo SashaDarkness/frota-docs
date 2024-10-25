@@ -1,0 +1,44 @@
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+import img1 from './src/img/telas_solicitacoes/tela-solicitacao-alterar-01.png'
+import img2 from './src/img/telas_solicitacoes/tela-solicitacao-alterar-02.png'
+
+  <p class="text-lg font-bold text-sky-600 dark:text-cyan-300 underline decoration-1">A função de alterar solicitação está disponível somente para Solicitantes.</p>
+  
+  <section>
+    <p class="text-lg font-bold">COMO ALTERAR UMA SOLICITAÇÃO NO SISTEMA?</p>
+
+    Para realizar a alteração de uma solicitação no sistema o usuário deve acionar a opção de <b>"Alterar"</b>, localizada na tela inicial do sistema.
+    Somente o usuário que criou a solicitação poderá modificá-la.
+   
+    Após acessar a tela de alteração será exibido o mesmo formulário que foi realizado o cadastro de solicitação. Nessa tela o usuário poderá fazer as modificações 
+    necessárias nos seguintes campos: Dados Gerais, Dados do Passageiro e Dados do Trajeto.
+
+    <div class="md:shrink-0">
+      <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+        <img src={img1.src} alt="Tela Alterar Solicitação com Passageiro" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2"/>
+      </div>
+    </div>
+ 
+    Na tela apresentada o sistema disponibiliza ao usuário as opções para: adicionar uma nova solicitação e visualizá-la (conforme indicado na imagem acima).
+  
+    ● Na seção de <b>Dados Gerais</b>, o usuário pode escolher uma nova data e hora de deslocamento. O único campo que não poderá ser modificado é o de <b>Finalidade</b>
+    caso o usuário deseje alterá-la é recomendado que seja excluído e gere uma nova solicitação.
+
+    ● A seção de <b>Dados do Passageiro</b> só aparecerá se houver um passageiro à ser transportado. Caso haja, poderá ser alterado o nome do servidor e seu telefone, o
+    campo de e-mail é preenchido automaticamente assim que o usuário for selecionado.
+    
+    <div class="md:shrink-0">
+      <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+        <img src={img2.src} alt="Tela Alterar Solicitação com Passageiro" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2"/>
+      </div>
+    </div>
+
+    ● Na seção de <b>Dados do Trajeto</b>, o usuário pode escolher uma nova localidade de saída e chegada e adicionar um novo trajeto.
+
+    Após concluir todas as alterações, o usuário deve clicar em <b>"Salvar"</b> para finalizar o processo. Em seguida, o sistema direcionará para a tela de visualização 
+    onde é possível observar as alterações feitas. 
+    
+    ● Há qualquer momento o usuário poderá abortar o processo de alteração clicando em <b>"Cancelar"</b> .
+
+  </section>

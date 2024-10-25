@@ -1,0 +1,25 @@
+import ImprimirSolicitacao from '../../../layout/finalidade/solicitacao/ImprimirSolicitacaoLayout.mdx';
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import img3 from './src/img/telas_solicitacoes/tela_solicitacao_cancelar_solicitacao.png'
+
+  <p class="text-lg font-bold text-sky-600 dark:text-cyan-300 underline decoration-1">A função de exclusão de solicitação está disponível somente para Solicitantes.</p>
+  
+  <section>
+    <p class="text-lg font-bold">EXCLUÇÃO DE UMA SOLICITAÇÃO NO SISTEMA</p>
+    
+    Para realizar a exclusão de um perfil no sistema o usuário deve acionar a opção de <b>"Excluir"</b>, localizada na tela inicial do sistema. Em seguida, o sistema exibe
+    ao usuário a tela abaixo: 
+  
+    <div class="md:shrink-0">
+      <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+        <img src={img3.src} alt="Tela Cancelar Solicitação" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2"/>
+      </div>
+    </div>
+
+    ● Antes de realizar a exclusão aparecerá uma mensagem de confirmação se o usuário realmente deseja cancelar a solicitação. Caso o mesmo deseje prosseguir com a ação deve acionar
+    a opção <b>"Sim"</b> para excluí-la, caso contrário acionar a opção <b>"Não"</b>. Se a exclusão ocorrer com êxito aparecerá uma mensagem no canto superior da tela que ação foi realizada com sucesso
+  
+  </section>
+
+<ImprimirSolicitacao/>

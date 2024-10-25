@@ -1,0 +1,65 @@
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+import img0 from './src/img/telas_movimentacoes/tela_movimentacao_retificao.png'
+import img1 from './src/img/telas_movimentacoes/tela-movimentacao-retificar-saida.png'
+import img2 from './src/img/telas_movimentacoes/tela-movimentacao-retificar-chegada.png'
+import img3 from './src/img/telas_movimentacoes/tela-movimentacao-retificar-timeline.png'
+
+<section>
+  <p class="text-lg font-bold">COMO RETIFICAR UMA MOVIMENTAÇÃO?</p>
+
+    Para realizar a Retificação de uma Movimentação o usuário deve acionar a opção de <b>"Retificar Movimentação"</b> localizada na tela inicial do sistema.
+
+    ● A opção de retificação só estará disponível depois que a movimentação do veículo estiver com o status <b>"fechado"</b> 
+   
+    <div class="md:shrink-0">
+      <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+        <img src={img0.src} alt="Tela Movimentação - Retificar Movimentação" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2"/>
+      </div>
+    </div>
+
+    Ao acessar a tela de Retificação será apresentado o mesmo formulário que foi realizado o cadastro de movimentação, é disponivel para o usuário as seguintes abas: <b>Registro de Saída, Registro de Chegada e Timeline.</b>
+
+    <div class="bg-white dark:bg-slate-800 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
+      <Tabs>
+        <TabItem label="Registro de Saída">
+          Nessa tela o usuário poderá fazer as modificações necessárias nos seguintes campos: Dados da Movimentação, Dados de Saída e Dados no Veículo na Saída.
+          
+          <div class="md:shrink-0">
+            <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+              <img src={img1.src} alt="Tela Retificar Movimentação - Saída" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2"/>
+            </div>
+          </div>
+
+          
+
+        </TabItem>
+
+        <TabItem label="Registro de Chegada">
+          <div class="md:shrink-0">
+            <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+              <img src={img2.src} alt="Tela Retificar Movimentação - Chegada" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2"/>
+            </div>
+          </div>
+
+
+        </TabItem>
+
+        <TabItem label="Timeline">
+          <div class="md:shrink-0">
+            <div class="w-full h-[510px] overflow-auto touch-auto bg-transparent">
+              <img src={img3.src} alt="Tela Retificar Movimentação - Timeline" class="w-[105%] border rounded border-sky-300 dark:border-sky-500 object-cover md:touch-pan-x md:h-full md:max-w-1/2"/>
+            </div>
+          </div>
+        
+        </TabItem>
+
+      </Tabs>
+    </div>
+
+
+    Após concluir todas as alterações, o usuário deve clicar em <b>"Retificar Movimentação"</b> para finalizar o processo. Em seguida, aparecerá uma janela para informar o motivo da Retificação. 
+    
+    ● Há qualquer momento o usuário poderá abortar o processo de alteração clicando em <b>"Cancelar"</b> .
+
+  </section>

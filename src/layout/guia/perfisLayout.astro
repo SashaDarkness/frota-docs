@@ -1,0 +1,55 @@
+---
+const gestor = [
+  "Cadastrar novas solicitações de transporte de veículo para o solicitante;",
+   "Visualizar as solicitações cadastradas pelo solicitante;", 
+   "Alterar os dados da solicitações;",
+   " Registrar se houve multas no veículo e informar quando ocorreu;",
+   "Cadastrar outros perfis de gestores."
+];
+
+const solicitante = [
+  "Cadastrar novas solicitações de transporte de veículo;",
+   "Visualizar as solicitações cadastradas;", 
+   "Alterar os dados da solicitações;",
+   "Imprimir Solicitação.",
+];
+
+const administrador = [
+  "Cadastrar perfis no sistema com os cargos de: gestor ou administrador;", 
+  "Registrar Central de Execução;",
+  "Registrar localidades no sistema;",
+  "Informar a qual a Finalidade da solicitação do veículo, o tipo de passageiro, condutor e alterar o status;",
+  "Registrar Naturezas de Diligências e informar o status do processo;",
+  "Registrar o Modelo dos Veículos, alterá-los e  ",
+  "Registrar um Condutor Externo;",
+  "Registrar e Configurar os painéis [Dashboards] do sistema."
+];
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+---
+
+O sistema possui os seguintes perfis de acesso: Solicitante, Gestor e Administrador.
+Cada um deles possui funcionalidades que são definidas a seguir: </br>
+
+<Tabs>
+  <TabItem label="SOLICITANTE">
+    <ul class="marker:text-sky-800 list-disc pl-5 space-y-3">
+      {solicitante.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </TabItem>
+  <TabItem label="GESTOR">
+    <ul class="marker:text-sky-800 list-disc pl-5 space-y-3">
+      {gestor.map((itemGestor) => (
+        <li>{itemGestor}</li>
+      ))}
+    </ul>
+  </TabItem>  
+  <TabItem label="ADMINISTRADOR">
+    <ul class="marker:text-sky-800 list-disc pl-5 space-y-3">
+      {administrador.map((itemAdministrador) => (
+        <li>{itemAdministrador}</li>
+      ))}
+    </ul>
+  </TabItem>  
+</Tabs>      
